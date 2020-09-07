@@ -17,8 +17,8 @@ Route::get('/', function () {
     return view('AdminSignUp.signUp');
 });
 
-Route::get('/welcome', function () {
-    return view('welcome');
+Route::get('/', function () {
+    return view('AdminSignUp.signUp');
 });
 
 Route::get('/homePage', 'AdminController@homePage');

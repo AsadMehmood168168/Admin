@@ -38,7 +38,12 @@ class NewVolumeController extends Controller
         $api = new APIModel();
         $url = "Maxjournals" . "/" . $id;
         $journal_Data = $api->getData($url);
-        return view('AdminPages.Volume.addNewVolume', ["journal_ID" => $id, "journal_Data"]);
+        $volArray = array();
+        if (isset($journal_Data)) {
+            $volArray = $journal_Data->volumes;
+        }
+        $volCount = count($volArray);
+        return view('AdminPages.Volume.addNewVolume', ["journal_ID" => $id, "volCount" => $volCount]);
     }
 
     /**
@@ -51,57 +56,55 @@ class NewVolumeController extends Controller
     {
         $journalID = $request->input('journalID');
 
-
         $volume = new VolumeModel();
-        $volume->setIssueYear($request->input('IssueYear'));
-        $volume->setIssueID('32645');
-
-        $volume->setIssueNumber('1');
+        $volume->setVolumeYear($request->input('volumeYear'));
+        $volume->setVolumeNumber($request->input('volCount'));
+        $volume->setVolumeID($journalID, $request->input('volumeYear'));
 
         $article = new ArticleModel();
-        $article->setPageNo($request->input('PageNo'));
-        $article->setArticleDOI($request->input('ArticleDOI'));
-        $article->setArticleType($request->input('ArticleType'));
-        $article->setArticleTitle($request->input('ArticleTitle'));
-        $article->setAuthors($request->input('Authors'));
-        $article->setAffiliation($request->input('Affiliation'));
-        $article->setAbstract($request->input('Abstract'));
-        $article->setSubmittedDate($request->input('SubmittedDate'));
-        $article->setPublishedDate($request->input('PublishedDate'));
-        $article->setAcceptedDate($request->input('AcceptedDate'));
-        $article->setArticleID($request->input('ArticleDOI'));
-        $article->setPDFPath($request->input('PDFPath'));
-        $article->setHTMLLink($request->input('HTMLLink'));
+        $article->setArticleDOI($volume->getVolumeID());
+        // $article->setPageNo($request->input('pageNo'));
+        // $article->setArticleID($request->input('articleID'));
+        // $article->setArticleType($request->input('articleType'));
+        // $article->setArticleTitle($request->input('articleTitle'));
+        // $article->setAffiliation($request->input('affiliation'));
+        // $article->setAbstract($request->input('abstract'));
+        // $article->setSubmittedDate($request->input('submittedDate'));
+        // $article->setAcceptedDate($request->input('acceptedDate'));
+        // $article->setPublishedDate($request->input('publishedDate'));
 
-        $metaAuthors = array();
-        $i = 0;
-        foreach ($_POST['MetaAuthors'] as $value) {
-            $metaAuthors[$i] = new ArticleAuthorsListModel();
-            $metaAuthors[$i]->setAuthorName($value);
-            $i++;
-        }
+        // $authors = array();
+        // $i = 0;
+        // foreach ($_POST['authors'] as $value) {
+        //     $authors[$i] = new ArticleAuthorsListModel();
+        //     $authors[$i]->setAuthorName($value);
+        //     $i++;
+        // }
 
-        $article->setMetaAuthors($metaAuthors);
-        $keyWords = array();
-        $x = 0;
-        foreach ($_POST['KeyWords'] as $value) {
-            $keyWords[$x] = new ArticleKeyWordsModel();
-            $keyWords[$x]->setKeyWordBody($value);
-            $x++;
-        }
-        $article->setKeyWords($keyWords);
-        //print $article;
-        $volume->setArticles($article);
+        // $article->setAuthors($authors);
 
-        $volume_content = json_encode($volume->jsonSerialize());
-        $api = new APIModel();
-        $url = 'journals' . '/' . $journalID;
-        $status = $api->insertData($url, $volume_content);
-        if ($status == '200') {
-            return back();
-        } else if ($status == '400') {
-            return back();
-        }
+        // $keyWords = array();
+        // $x = 0;
+        // foreach ($_POST['keyWords'] as $value) {
+        //     $keyWords[$x] = new ArticleKeyWordsModel();
+        //     $keyWords[$x]->setKeyWordBody($value);
+        //     $x++;
+        // }
+
+        // $article->setKeyWords($keyWords);
+
+        // //print $article;
+        // $volume->setArticles($article);
+        // $volume_content = json_encode($volume->jsonSerialize());
+
+        // $api = new APIModel();
+        // $url = 'journals' . '/' . $journalID;
+        // $status = $api->insertData($url, $volume_content);
+        // if ($status == '200') {
+        //     return back();
+        // } else if ($status == '400') {
+        //     return back();
+        // }
     }
 
     /**

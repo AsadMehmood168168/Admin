@@ -16,9 +16,12 @@ class ArticleModel extends Model
     {
         $this->pageNo = $pageNo;
     }
-    public function setArticleDOI($articleDOI)
+    public function setArticleDOI($volumeID)
     {
-        $this->articleDOI = $articleDOI;
+
+        $exculeRandom   = substr($volumeID, 0, -4);
+
+        // $this->articleDOI = $articleDOI;
     }
     public function setArticleID($articleID)
     {

@@ -32,7 +32,7 @@ class ArticleAuthorsListModel extends Model
     {
         return
             [
-                'AuthorName'     => $this->getAuthorName()
+                'authorName'     => $this->getAuthorName()
             ];
     }
 }

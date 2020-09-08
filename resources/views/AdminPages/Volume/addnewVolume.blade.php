@@ -39,18 +39,28 @@
                 {{-- journalID --}}
                 @if (isset($journal_ID))
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label" for="JNAME">JournalID:</label>
+                        <label class="col-sm-3 col-form-label" for="journalID">JournalID:</label>
                         <div class="col-sm-9">
                             <input type="text" readonly value="{{$journal_ID}}" name="journalID" class="form-control">
                         </div>
                     </div>
                 @endif
 
-                {{-- Issue Year --}}
+                {{-- volCount & volumeNumber++ when form data posted --}}
+                @if (isset($volCount))
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label" for="volCount">Previous Volume Count:</label>
+                        <div class="col-sm-9">
+                            <input type="text" readonly value="{{$volCount}}" name="volCount" class="form-control">
+                        </div>
+                    </div>
+                @endif
+                
+                {{-- volumeYear --}}
                 <div class="form-group row">
-                    <label class="col-sm-3 col-form-label" for="IssueYear">Issue Year:</label>
+                    <label class="col-sm-3 col-form-label" for="volumeYear">Volume Year:</label>
                     <div class="col-sm-9">
-                        <input type="text" name="IssueYear" class="form-control" placeholder="Issue Year" required>
+                        <input type="text" name="volumeYear" class="form-control" placeholder="Volume Year" required>
                     </div>
                 </div> 
 
@@ -59,112 +69,88 @@
                     <p style="text-align: center"> Article Information </p>
                 </h2>
 
-                {{-- Page Number --}}
+                {{-- pageNo --}}
                 <div class="form-group row">
-                    <label class="col-sm-3 col-form-label" for="PageNo">Page Number:</label>
+                    <label class="col-sm-3 col-form-label" for="pageNo">Page Number:</label>
                     <div class="col-sm-9">
-                        <input type="text" name="PageNo" class="form-control" placeholder="Page No" required>
+                        <input type="text" name="pageNo" class="form-control" placeholder="Page No" required>
                     </div>
                 </div>
 
-                {{-- Article DOI --}}
+                {{-- articleID --}}
                 <div class="form-group row">
-                    <label class="col-sm-3 col-form-label" for="ArticleDOI">Article DOI:</label>
+                    <label class="col-sm-3 col-form-label" for="articleID">Article ID:</label>
                     <div class="col-sm-9">
-                        <input type="text" name="ArticleDOI" class="form-control" placeholder="ArticleDOI" required>
+                        <input type="text" name="articleID" class="form-control" placeholder="Article ID" required>
                     </div>
                 </div>
 
-                {{-- ArticleType --}}
+                {{-- articleType --}}
                 <div class="form-group row">
-                    <label class="col-sm-3 col-form-label" for="ArticleType">Article Type:</label>
-                    <select id = "input_select" class="form-control" name="ArticleType" required="required">
+                    <label class="col-sm-3 col-form-label" for="articleType">Article Type:</label>
+                    <select id = "input_select" class="form-control" name="articleType" required="required">
                         <option selected>Choose....</option>
                         <option value="Research Article">Research Article</option>
                     </select>
                 </div>
                 
-                {{-- ArticleTitle --}}
+                {{-- articleTitle --}}
                 <div class="form-group row">
-                    <label class="col-sm-3 col-form-label" for="Arch">Article Title:</label>
+                    <label class="col-sm-3 col-form-label" for="articleTitle">Article Title:</label>
                      <div class="col-sm-9">
-                        <textarea rows="2" class="form-control" name="ArticleTitle" placeholder="Article Title" required></textarea>
+                        <textarea rows="2" class="form-control" name="articleTitle" placeholder="Article Title" required></textarea>
                     </div>
                 </div>
 
-                {{-- Authors --}}
+                {{-- affiliation --}}
                 <div class="form-group row">
-                    <label class="col-sm-3 col-form-label" for="Authors">Authors:</label>
+                    <label class="col-sm-3 col-form-label" for="affiliation">Affiliation:</label>
                     <div class="col-sm-9">
-                        <textarea rows="2" class="form-control" name="Authors" placeholder="Article Authors" required></textarea>
-                    </div>
-                </div>
-
-                {{-- Affiliation --}}
-                <div class="form-group row">
-                    <label class="col-sm-3 col-form-label" for="Affiliation">Affiliation:</label>
-                    <div class="col-sm-9">
-                        <input type="text" name="Affiliation" class="form-control" placeholder="Affiliation" required>
+                        <textarea rows="3" class="form-control" name="affiliation" placeholder="Affiliation" required></textarea>
                     </div>
                 </div> 
 
-                {{-- Abstract --}}
+                {{-- abstract --}}
                 <div class="form-group row">
-                    <label class="col-sm-3 col-form-label" for="Abstract">Abstract:</label>
+                    <label class="col-sm-3 col-form-label" for="abstract">Abstract:</label>
                     <div class="col-sm-9">
-                        <textarea rows="5" class="form-control" name="Abstract" placeholder="Abstract" required></textarea>
+                        <textarea rows="5" class="form-control" name="abstract" placeholder="Abstract" required></textarea>
                     </div>
                 </div>
 
-                {{-- SubmittedDate --}}
+                {{-- submittedDate --}}
                 <div class="form-group row">
-                    <label class="col-sm-3 col-form-label" for="SubmittedDate">Submitted Date:</label>
+                    <label class="col-sm-3 col-form-label" for="submittedDate">Submitted Date:</label>
                     <div class="col-sm-9">
-                        <input type="date" name="SubmittedDate" class="form-control" placeholder="Submitted Date" required>
+                        <input type="date" name="submittedDate" class="form-control" placeholder="Submitted Date" required>
                     </div>
                 </div>
 
-                {{-- AcceptedDate --}}
+                {{-- acceptedDate --}}
                 <div class="form-group row">
-                    <label class="col-sm-3 col-form-label" for="AcceptedDate">Accepted Date:</label>
+                    <label class="col-sm-3 col-form-label" for="acceptedDate">Accepted Date:</label>
                     <div class="col-sm-9">
-                        <input type="date" name="AcceptedDate" class="form-control" placeholder="AcceptedDate" required>
+                        <input type="date" name="acceptedDate" class="form-control" placeholder="AcceptedDate" required>
                     </div>
                 </div>
 
-                {{-- PublishedDate --}}
+                {{-- publishedDate --}}
                 <div class="form-group row">
-                    <label class="col-sm-3 col-form-label" for="PublishedDate">Published Date:</label>
+                    <label class="col-sm-3 col-form-label" for="publishedDate">Published Date:</label>
                     <div class="col-sm-9">
-                        <input type="date" name="PublishedDate" class="form-control" placeholder="Published Date" required>
+                        <input type="date" name="publishedDate" class="form-control" placeholder="Published Date" required>
                     </div>
                 </div>
 
-                {{-- PDFPath --}}
-                <div class="form-group row">
-                    <label class="col-sm-3 col-form-label" for="PDFPath">PDF Path:</label>
-                    <div class="col-sm-9">
-                        <input type="text" name="PDFPath" class="form-control" placeholder="PDF Path" required>
-                    </div>
-                </div> 
-
-                {{-- HTMLLink --}}
-                <div class="form-group row">
-                    <label class="col-sm-3 col-form-label" for="HTMLLink">HTML Link:</label>
-                    <div class="col-sm-9">
-                        <input type="text" name="HTMLLink" class="form-control" placeholder="HTML Link" required>
-                    </div>
-                </div> 
-                
-                {{-- KeyWords --}}
+                {{-- keyWords --}}
                 <h3 class="border-bottom pb-3 mb-4">Key Words</h3>
                 <div class="row">
                     <div class="col-md-12">
                         <div data-role="dynamic-fields">
                             <div class="form-group">
-                                <label class="col-sm-3 col-form-label" for="Key Words">Key Word:</label>
+                                <label class="col-sm-3 col-form-label" for="keyWords">Key Word:</label>
                                 <div class="col-sm-9">
-                                    <input type="text" name= "KeyWords[]" class="form-control" id="field-value" placeholder="KeyWords">
+                                    <input type="text" name= "keyWords[]" class="form-control" id="field-value" placeholder="Enter Key Word">
                                 </div>
                                 <button class="btn btn-danger" data-role="remove">
                                     <span class="glyphicon glyphicon-remove"></span>
@@ -177,15 +163,15 @@
                     </div>  
                 </div>
 
-                {{-- MetaAuthors --}}
-                <h3 class="border-bottom pb-3 mb-4">Meta Authors</h3>
+                {{-- authors --}}
+                <h3 class="border-bottom pb-3 mb-4">Authors</h3>
                 <div class="row">
                     <div class="col-md-12">
                         <div data-role="dynamic-fields">
                             <div class="form-group">
-                                <label class="col-sm-3 col-form-label" for="Meta Authors">Author Name:</label>
+                                <label class="col-sm-3 col-form-label" for="authors">Author Name:</label>
                                 <div class="col-sm-9">
-                                    <input type="text" name= "MetaAuthors[]" class="form-control" id="field-value" placeholder="Author Name">
+                                    <input type="text" name= "authors[]" class="form-control" id="field-value" placeholder="Author Name">
                                 </div>
                                 <button class="btn btn-danger" data-role="remove">
                                     <span class="glyphicon glyphicon-remove"></span>
@@ -197,6 +183,7 @@
                         </div>  
                     </div>  
                 </div>
+
                 {{-- Buttons --}}
                 <div class="form-group row">
                     <div class="col-sm-9 offset-sm-3">

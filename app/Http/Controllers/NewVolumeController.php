@@ -24,7 +24,7 @@ class NewVolumeController extends Controller
     public function showVolumeArticles($journalID, $volumeID)
     {
         $api = new APIModel();
-        $url = "journals" . "/" . "VolumeArticles" . "/" . $journalID . "/" . $volumeID;
+        $url = "Maxjournals" . "/" . "VolumeArticles" . "/" . $journalID . "/" . $volumeID;
         $article_Data = $api->getData($url);
         return view('AdminPages.Articles.viewVolumeArticles', ["article_Data" => $article_Data]);
     }
@@ -35,7 +35,10 @@ class NewVolumeController extends Controller
      */
     public function create($id)
     {
-        return view('AdminPages.Volume.addNewVolume', ["journal_ID" => $id]);
+        $api = new APIModel();
+        $url = "Maxjournals" . "/" . $id;
+        $journal_Data = $api->getData($url);
+        return view('AdminPages.Volume.addNewVolume', ["journal_ID" => $id, "journal_Data"]);
     }
 
     /**

@@ -14,7 +14,7 @@ class NewJournalController extends Controller
     public function showJournalVolumes($id)
     {
         $api = new APIModel();
-        $url = 'journals' . '/' . 'Volumes' . '/' . $id;
+        $url = 'Maxjournals' . '/' . 'volumes' . '/' . $id;
         $volume_Data = $api->getData($url);
         return view('AdminPages.Volume.showJournalVolumes', ["volume_Data" => $volume_Data, "journal_ID" => $id]);
     }
@@ -25,32 +25,30 @@ class NewJournalController extends Controller
     public function store(Request $request)
     {
         $journal = new JournalModel();
-        $journal->setPeriodicalid($request->input('OISSN'));
-        $journal->setJNAME($request->input('JNAME'));
-        $journal->setJID($request->input('JID'));
-        $journal->setIMGA($request->input('IMGA'));
-        $journal->setJISSN($request->input('JISSN'));
-        $journal->setOISSN($request->input('OISSN'));
-        $journal->setISSUE($request->input('ISSUE'));
-        $journal->setJABOUT($request->input('JABOUT'));
-        $journal->setINFOJ($request->input('INFOJ'));
-        $journal->setArch($request->input('Arch'));
-        $journal->setCoverP($request->input('CoverP'));
-        $journal->setEBML($request->input('EBML'));
-        $journal->setJInfoPdf($request->input('JInfoPdf'));
+        $journal->setJName($request->input('jName'));
+        $journal->setJid($request->input('jid'));
+        $journal->setJIssn($request->input('jIssn'));
+        $journal->setOIssn($request->input('oIssn'));
+        $journal->setMaxVolume($request->input('maxVolume'));
+        $journal->setJAbout($request->input('jAbout'));
+        $journal->setIndexInfo($request->input('indexInfo'));
         $journal_content = json_encode($journal->jsonSerialize());
         $api = new APIModel();
-        $status = $api->insertData('journals', $journal_content);
+        $status = $api->insertData('Maxjournals', $journal_content);
         if ($status == '200') {
-            return back();
+            $api = new APIModel();
+            $journal_Data = $api->getData('Maxjournals');
+            return view('AdminPages.Journal.showJournals', ["journal_Data" => $journal_Data]);
         } else {
-            return back();
+            $api = new APIModel();
+            $journal_Data = $api->getData('Maxjournals');
+            return view('AdminPages.Journal.showJournals', ["journal_Data" => $journal_Data]);
         }
     }
     public function show($id)
     {
         $api = new APIModel();
-        $journal_Data = $api->getData('journals');
+        $journal_Data = $api->getData('Maxjournals');
         return view('AdminPages.Journal.showJournals', ["journal_Data" => $journal_Data]);
     }
     public function edit($id)

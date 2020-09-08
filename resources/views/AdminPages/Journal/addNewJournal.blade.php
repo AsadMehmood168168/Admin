@@ -15,72 +15,50 @@
         <div class="bs-example">
             <h1 class="border-bottom pb-3 mb-4">Add New Journal</h1>
             {!! Form::open(['action' => 'NewJournalController@store','method' => 'POST']) !!}
-
+                
+                {{-- jName --}}
                 <div class="form-group row">
-                    <label class="col-sm-3 col-form-label" for="JNAME">Journal Name:</label>
+                    <label class="col-sm-3 col-form-label" for="jName">Journal Name:</label>
                     <div class="col-sm-9">
-                        <input type="text" name="JNAME" class="form-control" placeholder="Journal Name" required>
+                        <input type="text" name="jName" class="form-control" placeholder="Journal Name" required>
                     </div>
                 </div>
 
+                {{-- indexInfo --}}
                 <div class="form-group row">
-                    <label class="col-sm-3 col-form-label" for="INFOJ">Journal Info:</label>
+                    <label class="col-sm-3 col-form-label" for="indexInfo">Journal Index Info:</label>
                     <div class="col-sm-9">
-                        <textarea rows="3" class="form-control" name="INFOJ" placeholder="Journal Info" required></textarea>
+                        <textarea rows="3" class="form-control" name="indexInfo" placeholder="Journal Index Info" required></textarea>
                     </div>
                 </div>
                 
+                {{-- jid  -- jIssn  -- oIssn --}}
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label">Journal ID's</label>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" name="JID" placeholder="JID" required>
+                        <input type="text" class="form-control" name="jid" placeholder="Jid" required>
                     </div>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" name="JISSN" placeholder="JISSN" required>
+                        <input type="text" class="form-control" name="jIssn" placeholder="JIssn" required>
                     </div>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" name="OISSN" placeholder="OISSN" required>
+                        <input type="text" class="form-control" name="oIssn" placeholder="OIssn" required>
                     </div>
                 </div>
 
+                {{-- jAbout --}}
                 <div class="form-group row">
-                    <label class="col-sm-3 col-form-label" for="JABOUT">Journal About:</label>
+                    <label class="col-sm-3 col-form-label" for="jAbout">Journal About:</label>
                     <div class="col-sm-9">
-                        <textarea rows="3" class="form-control" name="JABOUT" placeholder="Journal About" required></textarea>
+                        <textarea rows="3" class="form-control" name="jAbout" placeholder="Journal About" required></textarea>
                     </div>
                 </div>
 
+                {{-- maxVolume --}}
                 <div class="form-group row">
-                    <label class="col-sm-3 col-form-label" for="Arch">Archieve:</label>
+                    <label class="col-sm-3 col-form-label" for="Issue">Max Volumes:</label>
                     <div class="col-sm-9">
-                        <textarea rows="3" class="form-control" name="Arch" placeholder="Journal Archieve" required></textarea>
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <label class="col-sm-3 col-form-label">Info URL's</label>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" name="IMGA" placeholder="Image Path" required>
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" name="CoverP" placeholder="Cover Page Path" required>
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" name="JInfoPdf" placeholder="Pdf Path" required>
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <label class="col-sm-3 col-form-label" for="Issue">Journal Issue:</label>
-                    <div class="col-sm-9">
-                        <input type="text" name="JNAME" class="form-control" placeholder="Journal Issue" required>
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <label class="col-sm-3 col-form-label" for="EBML">Journal EBML:</label>
-                    <div class="col-sm-9">
-                        <input type="text" name="EBML" class="form-control" placeholder="Journal EMBL" required>
+                        <input type="text" name="maxVolume" class="form-control" placeholder="Max Volumes" required>
                     </div>
                 </div>
 
@@ -90,6 +68,7 @@
                         <input type="reset" class="btn btn-secondary" value="Reset">
                     </div>
                 </div>
+                
             {!! Form::close() !!}
         </div>
     </div>

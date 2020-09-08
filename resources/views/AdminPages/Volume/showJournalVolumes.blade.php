@@ -37,38 +37,38 @@
                     {{-- IssueNumber --}}
                     <div class="row">
                         <div class="col-sm-2">
-                            <h5> Issue Number: </h5>
+                            <h5> Volume Number: </h5>
                         </div>
                         <div class="col-sm-3">
-                            <p> {{$volume->IssueNumber}} </p>
+                            <p> {{$volume->volumeNumber}} </p>
                         </div>
                     </div>
 
                     {{-- IssueYear --}}
                     <div class="row">
                         <div class="col-sm-2">
-                            <h5> Issue Year: </h5>  
+                            <h5> Volume Year: </h5>  
                         </div>
                         <div class="col-sm-3">
-                            <p> {{$volume->IssueYear}}  </p>   
+                            <p> {{$volume->volumeYear}}  </p>   
                         </div>
                     </div>
 
                     {{-- Issue ID --}}
                     <div class="row">
                         <div class="col-sm-2">
-                            <h5> Issue ID: </h5>  
+                            <h5> Volume ID: </h5>  
                         </div>
                         <div class="col-sm-3">
-                            <p> {{$volume->IssueID}}  </p>   
+                            <p> {{$volume->volumeID}}  </p>   
                         </div>
                     </div>
 
                     <div class="row" id = "linkGroup">
                         <div class="btn-group">
                             <a href="" class="btn btn-secondary"> Update Volume Info</a> 
-                            <a href="/Project1/public/viewArticles/{{$journal_ID}}/{{$volume->IssueID}}" class="btn btn-secondary"> View Article's</a> 
-                            <a href="/Project1/public/addArticle/{{$journal_ID}}/{{$volume->IssueID}}" class="btn btn-secondary"> Add Article</a> 
+                            <a href="/Project1/public/viewArticles/{{$journal_ID}}/{{$volume->volumeID}}" class="btn btn-secondary"> View Article's</a> 
+                            <a href="/Project1/public/addArticle/{{$journal_ID}}/{{$volume->volumeID}}" class="btn btn-secondary"> Add Article</a> 
                             <a href="" class="btn btn-secondary"> Delete Article</a> 
                         </div>
                     </div>

@@ -21,64 +21,47 @@
             <h1 class="border-bottom pb-3 mb-4">Journal's List</h1>
             @if (isset($journal_Data))
                 @foreach ($journal_Data as $journal)
+
+                    {{-- jName --}}
                     <div class="row">
                         <div class="col-sm-6">
                             <h5>
-                                {{$journal->JNAME}} 
+                                {{$journal->jName}} 
                             </h5>
                         </div>
                     </div>
+
+                    {{-- jAbout --}}
                     <div class="row">
                         <div class="col-sm-6">
-                            JABOUT : {{$journal->JABOUT}} 
+                            JABOUT : {{$journal->jAbout}} 
                         </div>
                     </div>
 
+                    {{-- indexInfo --}}
                     <div class="row">
                         <div class="col-sm-6">
-                            INFOJ : {{$journal->INFOJ}} 
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-4">
-                            Journal ID : {{$journal->JID}} 
-                        </div>
-                        <div class="col-sm-4">
-                            Print ISSN : {{$journal->JISSN}} 
-                        </div>
-                        <div class="col-sm-4">
-                            Online ISSN : {{$journal->OISSN}} 
+                            INFOJ : {{$journal->indexInfo}} 
                         </div>
                     </div>
 
+                    {{-- jid  --  jIssn  --  oIssn --}}
                     <div class="row">
                         <div class="col-sm-4">
-                            IMGA : {{$journal->IMGA}} 
+                            Journal Short Name : {{$journal->jid}} 
                         </div>
                         <div class="col-sm-4">
-                            CoverP : {{$journal->CoverP}} 
+                            Print ISSN : {{$journal->jIssn}} 
                         </div>
                         <div class="col-sm-4">
-                            JInfoPdf : {{$journal->JInfoPdf}} 
-                        </div>
-                    </div>
-                    {{-- periodicalid : {{$journal->periodicalid}} <br> --}}
-
-                    <div class="row">
-                        <div class="col-sm-6">
-                            ISSUE : {{$journal->ISSUE}} 
+                            Online ISSN : {{$journal->oIssn}} 
                         </div>
                     </div>
 
+                    {{-- maxVolume --}}
                     <div class="row">
                         <div class="col-sm-6">
-                            Arch : {{$journal->Arch}}
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-sm-6">
-                            EBML : {{$journal->EBML}} 
+                            Max Volume : {{$journal->maxVolume}} 
                         </div>
                     </div>
 

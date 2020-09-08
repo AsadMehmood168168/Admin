@@ -6,88 +6,54 @@ use Illuminate\Database\Eloquent\Model;
 
 class VolumeModel extends Model
 {
-    private $IssueID, $IssueNumber, $IssueYear;
-    private $Articles = array();
-    /**
-     * Get the value of IssueID
-     */
-    public function getIssueID()
-    {
-        return $this->IssueID;
-    }
-    /**
-     * Set the value of IssueID
-     *
-     * @return  self
-     */
-    public function setIssueID($IssueID)
-    {
-        $this->IssueID = $IssueID;
+    private $volumeID, $volumeNumber, $volumeYear;
+    private $articles = array();
 
-        return $this;
-    }
-    /**
-     * Get the value of IssueNumber
-     */
-    public function getIssueNumber()
+    //   Setters
+    public function setVolumeID($volumeID)
     {
-        return $this->IssueNumber;
+        $this->volumeID = $volumeID;
     }
-    /**
-     * Set the value of IssueNumber
-     *
-     * @return  self
-     */
-    public function setIssueNumber($IssueNumber)
+    public function setVolumeNumber($volumeNumber)
     {
-        $this->IssueNumber = $IssueNumber;
+        $this->volumeNumber = $volumeNumber;
+    }
+    public function setVolumeYear($volumeYear)
+    {
+        $this->volumeYear = $volumeYear;
+    }
+    public function setArticles($articles)
+    {
+        $this->articles = $articles;
+    }
 
-        return $this;
-    }
-    /**
-     * Get the value of IssueYear
-     */
-    public function getIssueYear()
+    //   Getters 
+    public function getVolumeID()
     {
-        return $this->IssueYear;
+        return $this->volumeID;
     }
-    /**
-     * Set the value of IssueYear
-     *
-     * @return  self
-     */
-    public function setIssueYear($IssueYear)
+    public function getVolumeNumber()
     {
-        $this->IssueYear = $IssueYear;
-
-        return $this;
+        return $this->volumeNumber;
     }
-    /**
-     * Get the value of Articles
-     */
+    public function getVolumeYear()
+    {
+        return $this->volumeYear;
+    }
     public function getArticles()
     {
-        return $this->Articles;
+        return $this->articles;
     }
-    /**
-     * Set the value of Articles
-     *
-     * @return  self
-     */
-    public function setArticles($Articles)
-    {
-        $this->Articles = $Articles;
 
-        return $this;
-    }
+    //   Json Seralize Class Data
     public function jsonSerialize()
     {
         return
             [
-                'IssueID'     => $this->getIssueID(),
-                'IssueNumber' => $this->getIssueNumber(),
-                'IssueYear'   => $this->getIssueYear(),
-                'Articles'    => $this->getArticles()
+                'volumeID'     => $this->getVolumeID(),
+                'volumeNumber' => $this->getVolumeNumber(),
+                'volumeYear'   => $this->getVolumeYear(),
+                'articles'     => $this->getArticles()
             ];
     }
 }

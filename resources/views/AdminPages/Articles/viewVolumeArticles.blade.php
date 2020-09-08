@@ -26,7 +26,7 @@
                 @foreach ($article_Data as $article)
                     <div class="row">
                         <div class="col-sm-9">
-                            <a href="/Project1/public/showArtilceText/{{$article->_id}}"> 
+                            <a href="/Project1/public/showArtilceText/{{$article->ArticleDOI}}"> 
                                 <h5>
                                     {{$article->ArticleTitle}}
                                 </h5>
@@ -48,7 +48,7 @@
                             Article ID : 
                         </div>
                         <div class="col-sm-9">
-                            {{$article->_id}}
+                            {{$article->ArticleDOI}}
                         </div> 
                     </div>
                     

@@ -60,15 +60,15 @@
                             <h5> Issue ID: </h5>  
                         </div>
                         <div class="col-sm-3">
-                            <p> {{$volume->_id}}  </p>   
+                            <p> {{$volume->IssueID}}  </p>   
                         </div>
                     </div>
 
                     <div class="row" id = "linkGroup">
                         <div class="btn-group">
                             <a href="" class="btn btn-secondary"> Update Volume Info</a> 
-                            <a href="/Project1/public/viewArticles/{{$journal_ID}}/{{$volume->_id}}" class="btn btn-secondary"> View Article's</a> 
-                            <a href="/Project1/public/addArticle/{{$journal_ID}}/{{$volume->_id}}" class="btn btn-secondary"> Add Article</a> 
+                            <a href="/Project1/public/viewArticles/{{$journal_ID}}/{{$volume->IssueID}}" class="btn btn-secondary"> View Article's</a> 
+                            <a href="/Project1/public/addArticle/{{$journal_ID}}/{{$volume->IssueID}}" class="btn btn-secondary"> Add Article</a> 
                             <a href="" class="btn btn-secondary"> Delete Article</a> 
                         </div>
                     </div>

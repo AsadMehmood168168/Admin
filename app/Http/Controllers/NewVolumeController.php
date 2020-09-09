@@ -24,7 +24,7 @@ class NewVolumeController extends Controller
     public function showVolumeArticles($journalID, $volumeID)
     {
         $api = new APIModel();
-        $url = "Maxjournals" . "/" . "VolumeArticles" . "/" . $journalID . "/" . $volumeID;
+        $url = "Maxjournals" . "/" . "volumeArticles" . "/" . $journalID . "/" . $volumeID;
         $article_Data = $api->getData($url);
         return view('AdminPages.Articles.viewVolumeArticles', ["article_Data" => $article_Data]);
     }
@@ -59,11 +59,12 @@ class NewVolumeController extends Controller
         $volume = new VolumeModel();
         $volume->setVolumeYear($request->input('volumeYear'));
         $volume->setVolumeNumber($request->input('volCount'));
-        $volume->setVolumeID($journalID, $request->input('volumeYear'));
+        $volume->setVolumeID($journalID, $volume->getVolumeNumber());
 
         $article = new ArticleModel();
-        $article->setArticleDOI($volume->getVolumeID());
-        // $article->setPageNo($request->input('pageNo'));
+        $article->setPageNo($request->input('pageNo'));
+        $article->setArticleDOI($volume->getVolumeID(), $article->getPageNo());
+
         // $article->setArticleID($request->input('articleID'));
         // $article->setArticleType($request->input('articleType'));
         // $article->setArticleTitle($request->input('articleTitle'));
@@ -90,15 +91,12 @@ class NewVolumeController extends Controller
         //     $keyWords[$x]->setKeyWordBody($value);
         //     $x++;
         // }
-
         // $article->setKeyWords($keyWords);
-
-        // //print $article;
         // $volume->setArticles($article);
         // $volume_content = json_encode($volume->jsonSerialize());
 
         // $api = new APIModel();
-        // $url = 'journals' . '/' . $journalID;
+        // $url = 'Maxjournals' . '/' . $journalID;
         // $status = $api->insertData($url, $volume_content);
         // if ($status == '200') {
         //     return back();

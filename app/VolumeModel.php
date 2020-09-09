@@ -10,12 +10,10 @@ class VolumeModel extends Model
     private $articles = array();
 
     //   Setters
-    public function setVolumeID($journalID, $volumeYear)
+    public function setVolumeID($journalID, $volumeNumber)
     {
-        $random = bin2hex(random_bytes(2));
         $id   = substr($journalID, -4);
-        $year = substr($volumeYear, -3);
-        $VolumeID = $id . "-" . $year . "-" . $random;
+        $VolumeID = $id . "." . $volumeNumber;
         $this->volumeID = $VolumeID;
     }
     public function setVolumeNumber($volumeCount)

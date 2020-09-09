@@ -26,29 +26,22 @@
                 @foreach ($article_Data as $article)
                     <div class="row">
                         <div class="col-sm-9">
-                            <a href="/Project1/public/showArtilceText/{{$article->ArticleDOI}}"> 
+                            <a href="/Project1/public/showArtilceText/{{$article->articleDOI}}"> 
                                 <h5>
-                                    {{$article->ArticleTitle}}
+                                    {{$article->articleTitle}}
                                 </h5>
                             </a>
                         </div>  
                     </div>
 
-                    <div class="row">
-                        <div class="col-sm-2">
-                            Authors : 
-                        </div>
-                        <div class="col-sm-9">
-                            {{$article->Authors}}
-                        </div> 
-                    </div>
+                    
 
                     <div class="row">
                         <div class="col-sm-2">
-                            Article ID : 
+                            Article DOI : 
                         </div>
                         <div class="col-sm-9">
-                            {{$article->ArticleDOI}}
+                            {{$article->articleDOI}}
                         </div> 
                     </div>
                     

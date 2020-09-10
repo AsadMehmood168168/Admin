@@ -1,33 +1,4 @@
 <title>Add Volume</title>
-<style>
-    .main{
-        margin-top: 75px;
-        width: 100%;
-    }
-    .bs-example{
-        margin: 20px;        
-    }
-    #input_select{
-        width: 72%;
-        margin-left: 1.5%;
-    }
-    [data-role="dynamic-fields"] > .form-group + .form-group 
-    {
-        margin-top: 0.5em;
-    }
-    [data-role="dynamic-fields"] > .form-group [data-role="add"] 
-    {
-        display: none;
-        }
-    [data-role="dynamic-fields"] > .form-group:last-child [data-role="add"] 
-    {
-        display: inline-block;
-    }
-    [data-role="dynamic-fields"] > .form-group:last-child [data-role="remove"] 
-    {
-        display: none;
-    }
-</style>
 @extends('AppTemplate.homeTemplate')
 @section('content')
     @include('AppTemplate.navBar')

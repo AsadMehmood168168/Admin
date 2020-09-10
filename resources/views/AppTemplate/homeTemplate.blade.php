@@ -12,6 +12,42 @@
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <style>
+      .main{
+        margin-top: 10px;
+        width: 100%;
+      }
+      .bs-example{
+        margin: 20px;        
+      }
+      #linkGroup{
+        margin-top : 10px;
+        margin-left: 1px;
+      }
+      #justifyText{
+        text-align: justify;
+        text-justify: inter-word;
+      }
+      #input_select{
+        width: 72%;
+        margin-left: 1.5%;
+      }
+      [data-role="dynamic-fields"] > .form-group + .form-group {
+        margin-top: 0.5em;
+      }
+      [data-role="dynamic-fields"] > .form-group [data-role="add"] 
+      {
+        display: none;
+      }
+      [data-role="dynamic-fields"] > .form-group:last-child [data-role="add"] 
+      {
+        display: inline-block;
+      }
+      [data-role="dynamic-fields"] > .form-group:last-child [data-role="remove"] 
+      {
+        display: none;
+      }
+    </style>
   </head>
   <body>
     <section>

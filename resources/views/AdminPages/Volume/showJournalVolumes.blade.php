@@ -1,21 +1,4 @@
 <title>Journal Volume's List</title>
-<style>
-    .main{
-        margin-top: 75px;
-        width: 100%;
-    }
-    .bs-example{
-        margin: 20px;        
-    }
-    #linkGroup{
-        margin-top : 10px;
-        margin-left: 1px;
-    }
-    h5{
-        float: left;
-        margin-right: 10px;
-    }
-</style>
 @extends('AppTemplate.homeTemplate')
 @section('content')
     @include('AppTemplate.navBar')
@@ -27,20 +10,20 @@
                 {{-- journal_ID --}}
                 <div class="row">
                     <div class="col-sm-2">
-                        <h5> Journal ID : </h5>
+                        <h5> Journal OISSN : </h5>
                     </div>
                     <div class="col-sm-3">
-                        <p> {{$journal_ID}} </p>
+                        <h5> {{$journal_ID}} </h5> 
                     </div>
                 </div>
                 @foreach ($volume_Data as $volume)
-                    {{-- IssueNumber --}}
+                    {{-- volumeNumber --}}
                     <div class="row">
                         <div class="col-sm-2">
                             <h5> Volume Number: </h5>
                         </div>
                         <div class="col-sm-3">
-                            <p> {{$volume->volumeNumber}} </p>
+                            <h5> {{$volume->volumeNumber}} </h5> 
                         </div>
                     </div>
 
@@ -50,7 +33,7 @@
                             <h5> Volume Year: </h5>  
                         </div>
                         <div class="col-sm-3">
-                            <p> {{$volume->volumeYear}}  </p>   
+                            <h5> {{$volume->volumeYear}} </h5>   
                         </div>
                     </div>
 
@@ -60,7 +43,7 @@
                             <h5> Volume ID: </h5>  
                         </div>
                         <div class="col-sm-3">
-                            <p> {{$volume->volumeID}}  </p>   
+                            <h5> {{$volume->volumeID}} </h5>   
                         </div>
                     </div>
 

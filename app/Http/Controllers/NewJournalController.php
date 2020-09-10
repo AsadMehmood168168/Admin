@@ -36,13 +36,9 @@ class NewJournalController extends Controller
         $api = new APIModel();
         $status = $api->insertData('Maxjournals', $journal_content);
         if ($status == '200') {
-            $api = new APIModel();
-            $journal_Data = $api->getData('Maxjournals');
-            return view('AdminPages.Journal.showJournals', ["journal_Data" => $journal_Data]);
+            return back();
         } else {
-            $api = new APIModel();
-            $journal_Data = $api->getData('Maxjournals');
-            return view('AdminPages.Journal.showJournals', ["journal_Data" => $journal_Data]);
+            return back();
         }
     }
     public function show($id)

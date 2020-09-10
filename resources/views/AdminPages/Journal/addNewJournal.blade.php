@@ -1,13 +1,4 @@
 <title>Add Journal</title>
-<style>
-    .main{
-        margin-top: 75px;
-        width: 100%;
-    }
-    .bs-example{
-        margin: 20px;        
-    }
-</style>
 @extends('AppTemplate.homeTemplate')
 @section('content')
     @include('AppTemplate.navBar')

@@ -21,7 +21,6 @@ class ArticleModel extends Model
         // 10.19026
         // $random = bin2hex(random_bytes(2));
         $articleDOI = "10.19026" . "/" . $volumeID . "." . $pageNo;
-        print $articleDOI;
         $this->articleDOI = $articleDOI;
     }
     public function setArticleID($articleID)

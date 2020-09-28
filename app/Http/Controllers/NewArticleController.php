@@ -94,10 +94,13 @@ class NewArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id, $id1)
     {
-        $article_ID = $id;
-        $view = 'HTMLFiles' . '.' . $article_ID;
+        $b = str_replace('.', '', $id1);
+        if (is_numeric($b)) {
+            $id1 = $b;
+        }
+        $view = 'HTMLFiles' . '.' . $id1;
         return view($view);
     }
 

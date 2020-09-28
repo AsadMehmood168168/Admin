@@ -17,9 +17,9 @@ Route::get('/', function () {
     return view('AdminSignUp.signUp');
 });
 
-Route::get('/homePage', 'AdminController@homePage');
+Route::get('/APITEST', 'TestController@create');
 
-Route::get('/viewNinjas', 'MyController@create');
+Route::get('/homePage', 'AdminController@homePage');
 
 Route::resource('signUp', 'AdminController');
 
@@ -43,4 +43,4 @@ Route::get('/addArticle/{id}/{vid}', 'NewArticleController@create');
 
 Route::resource('/addArticle', 'NewArticleController');
 
-Route::get('/showArtilceText/{id}', 'NewArticleController@show');
+Route::get('/fullText/{id}/{id1}', 'NewArticleController@show');

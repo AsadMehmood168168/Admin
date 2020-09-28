@@ -26,10 +26,7 @@ class NewVolumeController extends Controller
         $api = new APIModel();
         $url = "Maxjournals" . "/" . "volumeArticles" . "/" . $journalID . "/" . $volumeID;
         $article_Data = $api->getData($url);
-        $data = "<h2>Header 2</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel lacinia nulla.<p>";
-        return view('AdminPages.Articles.viewVolumeArticles', ["data" => $data]);
-        // return view('AdminPages.Articles.viewVolumeArticles', ["article_Data" => $article_Data]);
-
+        return view('AdminPages.Articles.viewVolumeArticles', ["article_Data" => $article_Data]);
     }
     /**
      * Show the form for creating a new resource.

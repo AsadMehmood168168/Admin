@@ -77,14 +77,20 @@
 
     function goToSection() {
         var abstract = document.getElementById("tbAbstract");
+        var keywords = document.getElementById("tbkeywords");
         var introduction = document.getElementById("tbIntroduction");
         var materialsAndMethods = document.getElementById("tbMaterialsAndMethods");
         var resultAndDiscussion = document.getElementById("tbResultAndDiscussion");
         var conclusion = document.getElementById("tbConclusion");
         var conflictsofInterest = document.getElementById("tbConflictsofInterest");
+        var affiliation = document.getElementById("tbAffiliation");
         var references = document.getElementById("tbReferences");
+        var rights_and_permissions = document.getElementById("tbRights_and_permissions");
+        var citeArtilce = document.getElementById("tbCiteArtilce");
         if (abstract) {
             window.location.href = '#Abstract';
+        } else if (keywords) {
+            window.location.href = '#keywords';
         } else if (introduction) {
             window.location.href = '#Introduction';
         } else if (materialsAndMethods) {
@@ -95,11 +101,34 @@
             window.location.href = '#Conclusion';
         } else if (conflictsofInterest) {
             window.location.href = '#ConflictsofInterest';
+        } else if (conflictsofInterest) {
+            window.location.href = '#Affiliation';
         } else if (references) {
             window.location.href = '#References';
+        } else if (rights_and_permissions) {
+            window.location.href = '#Rights_and_permissions';
+        } else if (citeArtilce) {
+            window.location.href = '#CiteArtilce';
         }
     }
 
+    function goToAffliation(){
+        var aff1 = document.getElementById("aff1");
+        var aff2 = document.getElementById("aff2");
+        if (aff1){
+            window.location.href = '#affliation_1'
+        } else if (aff2) {
+            window.location.href = '#affliation_2'
+        }
+    }
+
+    // This function is use for other links or for external links
+    function goToLink(){
+        var ctArtilce = document.getElementById("ctArticle");
+        if (ctArticle){
+            window.location.href = '#cite_this_article'
+        }
+    }
 </script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
 <style>
@@ -109,40 +138,55 @@
         left: 68%;
         font-size: 140%;
     }
-
     #titleHeading {
         font-size: 170%;
         font-family: Arial, Helvetica, sans-serif;
         font-weight: bolder;
     }
-
     .articleInformation {
         margin-left: 2%;
         border-right: 1px solid black;
         padding-right: 2%
     }
-
     #authorName {
         margin-left: 1.5%;
         margin-top: 2%;
     }
-
-
     #heading {
         border-bottom: 2px solid black;
         font-family: Arial;
     }
-
     #body {
         font-family: Arial;
         font-size: 130%;
         line-height: 1.6;
     }
-
     .centerText {
         text-align: center;
     }
+    #journalTitle{
+        margin-top: 2.5%;
+        font-size: 130%;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bolder;
+    }
+    .body{
+        font-family: Arial;
+        font-size: 130%;
+        line-height: 1.6;
+    }
 
+    .margin{
+        margin-top: 2.5%;
+    }
+
+    #keyword{
+        background-color: lightgray;
+        border: 1px solid gray;
+        border-radius: 25px;
+        margin-left: 5px;
+        margin-top: 10px;
+    }
 </style>
 @extends('AppTemplate.homeTemplate')
 @section('content')
@@ -169,17 +213,20 @@
                         </div>
                     </div>
                     <div class="row" id="authorsList">
-                        {{-- <sub>1</sub> --}}
                         <div id="authorName">
-                            <a href=""> <sup>1</sup>A.O. Okewale </a>
+                            <a href="#affliation_1" onclick="goToAffliation()" id = "aff1"> <sup>1</sup> A.O. Okewale </a>
                         </div>
-                        {{-- ,<sub>1</sub> --}}
                         <div id="authorName">
-                            <a href=""> <sup>1</sup>C.N. Owabor </a>
+                            <a href="#affliation_1" onclick="goToAffliation()" id = "aff1"> <sup>1</sup> C.N. Owabor </a>
                         </div>
-                        {{-- &<sub>2</sub> --}}
                         <div id="authorName">
-                            <a href=""><sup>2</sup> J.G. James</a>
+                            <a href="#affliation_2" onclick="goToAffliation()" id = "aff2"> <sup>2</sup> J.G. James </a>
+                        </div>
+                    </div>
+                    <div class="row" id="journalTitle">
+                        <div class="col-sm-12">
+                            Research Journal of Applied Sciences, Engineering and Technology 17(2): 40-53, 2020 
+                            | <a href="#cite_this_article" onclick="goToLink()" id = "ctArticle"> Cite This Artilce</a> 
                         </div>
                     </div>
                     <div class="row" id="Abstract">
@@ -224,12 +271,40 @@
                             40.29°C of temperature.
                         </div>
                     </div>
+                    <div class="row" id="Keywords">
+                        <div class="col-sm-12">
+                            <h3 id="heading">
+                                Keywords
+                            </h3>
+                        </div>
+                        <div class="col-sm-12 centerText body">
+                            <div class="col-sm-3" id="keyword">
+                                Adsorption
+                            </div>
+                            <div class="col-sm-3" id="keyword">
+                                inhibition
+                            </div>
+                            <div class="col-sm-3" id="keyword">
+                                okro leaf extract
+                            </div>
+                            <div class="col-sm-3" id="keyword">
+                                optimization
+                            </div>
+                            <div class="col-sm-3" id="keyword">
+                                RSM
+                            </div>
+                            <div class="col-sm-3" id="keyword">
+                                thermodynamic
+                            </div>
+                        </div>
+                    </div>
                     <div class="row" id="Introduction">
                         <div class="col-sm-12">
                             <h3 id="heading">
                                 Introduction
                             </h3>
                         </div>
+                        
                         <div class="col-sm-12" id="Body">
                             The consequences of corrosion are numerous,diverse and effects of these on the
                             efficient, safe and reliable operation of equipment or edifices are often
@@ -1729,6 +1804,40 @@
                             </p>
                         </div>
                     </div>
+                    <div class="row" id="Affiliation">
+                        <div class="col-sm-12">
+                            <h3 id="heading">
+                                Author Details 
+                            </h3>
+                        </div>
+                        <div class="col-sm-12 body">
+                            <h3>
+                                Affiliations
+                            </h3>
+                        </div>
+                        <div class="col-sm-12 body font-weight-bold" id="affliation_1">
+                            Department of Chemical Engineering, Federal University of Petroleum Resources, 
+                            Effurun, Delta State, Nigeria
+                        </div>
+                        <div class="col-sm-12 body" id="affliation_1_author_1">
+                            A.O. Okewale, C.N. Owabor
+                        </div>
+                        <div class="col-sm-12 body font-weight-bold" id="affliation_2">
+                            Department of Petroleum and Natural Gas Processing Engineering, 
+                            Petroleum Training Institute, Effurun, Delta State, Nigeria
+                        </div>
+                        <div class="col-sm-12 body" id="affliation_2_author_1">
+                            J.G. James
+                        </div>
+                        <div class="col-sm-12 body">
+                            <h3>
+                                Corresponding Author
+                            </h3>
+                        </div>
+                        <div class="col-sm-12 body" id="CorrespondingAuthor">
+                            Correspondence to <a href="">A.O. Okewale</a>
+                        </div>
+                    </div>
                     <div class="row" id="References">
                         <div class="col-sm-12">
                             <h3 id="heading">
@@ -1873,6 +1982,63 @@
                             
                         </div>
                     </div>
+                    <div class="row" id="Rights_and_permissions">
+                        <div class="col-sm-12">
+                            <h3 id="heading">
+                                Rights And permissions 
+                            </h3>
+                        </div>
+                        <div class="col-sm-12 body">
+                            <b>Open Access</b> This article is licensed under a Creative Commons Attribution 4.0 International 
+                            License, which permits use, sharing, adaptation, distribution and reproduction 
+                            in any medium or format, as long as you give appropriate credit to the original 
+                            author(s) and the source, provide a link to the Creative Commons license, and 
+                            indicate if changes were made. The images or other third-party material in this 
+                            article are included in the article’s Creative Commons license, unless indicated 
+                            otherwise in a credit line to the material. If material is not included in the 
+                            article’s Creative Commons license and your intended use is not permitted by 
+                            statutory regulation or exceeds the permitted use, you will need to obtain 
+                            permission directly from the copyright holder. To view a copy of this license, 
+                            visit <a href="http://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</a> 
+                        </div>
+                    </div>
+                    <div class="row" id="CiteArtilce">
+                        <div class="col-sm-12">
+                            <h3 id="heading">
+                                About This Article  
+                            </h3>
+                        </div>
+                        <div class="col-sm-12 body">
+                            Cite This Artilce
+                        </div>
+                        <div class="col-sm-12 font-italic margin" id = "cite_this_article">
+                            A.O. Okewale, C.N. Owabor, J.G. James, 2020. Thermodynamic, Adsorption and 
+                            Optimization Studies on Carbon Steel in Hydrochloric Acid Environment using 
+                            Okro Leaf Extract as Corrosion Inhibitor. Research Journal of Applied Sciences, 
+                            Engineering and Technology 17(2): 40-53. DOI:10.19026/rjaset.17.6038
+                        </div>
+                        <div class="col-sm-12 margin">
+                            <table class="table">
+                                <thead class="">
+                                    <tr>
+                                        <th>Received</th>
+                                        <th>Accepted</th>
+                                        <th>Published</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>July 15, 2019</td>
+                                        <td>September 03, 2019</td>
+                                        <td>April 15, 2020</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-sm-12 body">
+                            <a href="">Share This Article</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-sm-3" id="tableOfContents">
                     <div class="row">
@@ -1883,6 +2049,11 @@
                     <div class="row" id="sectionItem">
                         <div class="col-sm-12">
                             <a href="#Abstract" id="tbAbstract" onclick="goToSection();">Abstract</a>
+                        </div>
+                    </div>
+                    <div class="row" id="sectionItem">
+                        <div class="col-sm-12">
+                            <a href="#keywords" id="tbKeywords" onclick="goToSection();">Keywords</a>
                         </div>
                     </div>
                     <div class="row" id="sectionItem">
@@ -1915,7 +2086,22 @@
                     </div>
                     <div class="row" id="sectionItem">
                         <div class="col-sm-12">
+                            <a href="#Affiliation" id="tbAffiliation" onclick="goToSection();">Author Details</a>
+                        </div>
+                    </div>
+                    <div class="row" id="sectionItem">
+                        <div class="col-sm-12">
                             <a href="#References" id="tbReferences" onclick="goToSection();">References</a>
+                        </div>
+                    </div>
+                    <div class="row" id="sectionItem">
+                        <div class="col-sm-12">
+                            <a href="#Rights_and_permissions" id="tbRights_and_permissions" onclick="goToSection();">Rights And Permissions</a>
+                        </div>
+                    </div>
+                    <div class="row" id="sectionItem">
+                        <div class="col-sm-12">
+                            <a href="#CiteArtilce" id="tbCiteArtilce" onclick="goToSection();">About This Article</a>
                         </div>
                     </div>
                 </div>

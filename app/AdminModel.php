@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+// comment for pull reqs
 class AdminModel extends Model
 {
     private $firstName, $lastName, $email, $password, $phonoNumber;

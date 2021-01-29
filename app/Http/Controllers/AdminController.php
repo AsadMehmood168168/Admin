@@ -24,7 +24,11 @@ class AdminController extends Controller
         $admin = new AdminModel();
         $api   = new APIModel();
         // get request from Api with unique user_email & password
-        $url = 'admin' . '/' . $request->input('email') . '/' . $request->input('password');
+        $admin->setEmail($request->input('email'));
+        $admin->setPassword($request->input('password'));
+        $admin_login = json_encode($admin->loginJsonSerialize());
+        $api->setUrl("http://localhost:5000");
+        $url = '/admin/' . $admin_login;
         $data  = $api->getData($url);
         if (isset($data)) {
             $admin->setFirstName($data->name);
@@ -49,15 +53,13 @@ class AdminController extends Controller
         $admin->setPassword($request->input(('password')));
         $admin_content = json_encode($admin->jsonSerialize());
         $api = new APIModel();
-        $status = $api->insertData('admin', $admin_content);
+        $api->setUrl("http://localhost:5000");
+        $status = $api->insertData('/admin', $admin_content);
         if ($status == '200') {
-            print "Admin Successfully Registered..";
-        } else {
-            print "Dublication Error...";
-        }
-        // print $admin_content;
-
-        // return view('AdminPages.adminHomePage');
+            $request->session()->put('admin_Data', $admin);
+            $decoded_Data  = json_decode($admin_content);
+            return view('AdminPages.adminHomePage', ["admin_Data" => $decoded_Data]);
+        } 
     }
     public function show($id)
     {

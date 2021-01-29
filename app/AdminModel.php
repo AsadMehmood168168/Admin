@@ -62,4 +62,11 @@ class AdminModel extends Model
                 'password'    => $this->getPassword()
             ];
     }
+    public function loginJsonSerialize(){
+        return 
+        [
+            'email'       => $this->getEmail(),
+            'password'    => $this->getPassword()
+        ];
+    }
 }

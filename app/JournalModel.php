@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class JournalModel extends Model
 {
-    private $jName, $jid, $jIssn, $oIssn, $maxVolume, $jAbout, $indexInfo;
+    private $jName, $jid, $jIssn, $oIssn, $maxVolume, $jAbout, $indexInfo , $apiLink;
     private $news = array();
     private $volumes = array();
 
@@ -47,6 +47,10 @@ class JournalModel extends Model
     {
         $this->volumes = $volumes;
     }
+    public function setApiLink($apiLink)
+    {
+        $this->apiLink = $apiLink;
+    }
 
 
     //    Getters 
@@ -86,8 +90,12 @@ class JournalModel extends Model
     {
         return $this->volumes;
     }
+    public function getApiLink()
+    {
+        return $this->apiLink;
+    }
 
-    // Json Seralize Class Data
+    // Json Seralize Class Data for Journal
     public function jsonSerialize()
     {
         return
@@ -104,4 +112,19 @@ class JournalModel extends Model
                 'volumes'      => $this->getVolumes()
             ];
     }
+
+    // Json Seralize Class Data for JournalsList
+    public function jsonSerializeJournalList()
+    {
+        return
+        [
+            'jName'        => $this->getJName(),
+            'jid'          => $this->getJid(),
+            'jIssn'        => $this->getJIssn(),
+            'oIssn'        => $this->getOIssn(),
+            '_id'          => $this->getOIssn(),
+            'apiLink'      => $this->getApiLink()
+        ];
+    }    
+    
 }

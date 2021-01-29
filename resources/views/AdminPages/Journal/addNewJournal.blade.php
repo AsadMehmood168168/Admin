@@ -53,6 +53,14 @@
                     </div>
                 </div>
 
+                {{-- apiLink --}}
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label" for="apiLink">Journal API Link:</label>
+                    <div class="col-sm-9">
+                        <input type="text" name="apiLink" class="form-control" placeholder="API Link" required>
+                    </div>
+                </div>
+
                 <div class="form-group row">
                     <div class="col-sm-9 offset-sm-3">
                         <input type="submit" class="btn btn-primary" value="Submit">

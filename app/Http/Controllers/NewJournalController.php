@@ -32,14 +32,49 @@ class NewJournalController extends Controller
         $journal->setMaxVolume($request->input('maxVolume'));
         $journal->setJAbout($request->input('jAbout'));
         $journal->setIndexInfo($request->input('indexInfo'));
-        $journal_content = json_encode($journal->jsonSerialize());
+        $journal->setApiLink($request->input('apiLink'));
+        $journalContent = json_encode($journal->jsonSerialize());
+        $journalListContent = json_encode($journal->jsonSerializeJournalList());
+        // print $journalListContent;
         $api = new APIModel();
-        $status = $api->insertData('Maxjournals', $journal_content);
-        if ($status == '200') {
-            return back();
-        } else {
-            return back();
-        }
+        $api->setUrl("http://localhost:5000");
+        $status = $api -> insertData("/journalList",$journalListContent);
+        print $status;
+        // $url = "http://localhost:5000/journalList";
+        // $ch = curl_init($url);
+        // curl_setopt($ch, CURLOPT_POSTFIELDS, $journalListContent);
+        // curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+        // # Return response instead of printing.
+        // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        // # Send request.
+        // $result = curl_exec($ch);
+        // curl_close($ch);
+        // # Print response.
+        // echo "<pre>$result</pre>";
+
+
+
+        
+        // $data = $api->getData("/journalList");
+
+        // print json_encode($data);
+        // if (isset($data)){
+        //     foreach ($data as $journalData){
+        //         print $journalData->apiLink;
+        //     }
+        // }
+        //print $journalContent . "<br>" . $journalListContent;
+        // $api = new APIModel();
+        // $api->setUrl("http://localhost:3000");
+        // $api->insertData('/journalList', $journalListContent);
+        // print $status;
+        // $api->insertData('/Maxjournals', $journalContent);
+        // print $status;
+        // if ($status == '200') {
+        //     return back();
+        // } else {
+        //     return back();
+        // }
     }
     public function show($id)
     {

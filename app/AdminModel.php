@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+// Change from Me
 class AdminModel extends Model
 {
     private $firstName, $lastName, $email, $password, $phonoNumber;

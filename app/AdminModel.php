@@ -3,7 +3,9 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-// commit from Afshan again
+// commit from Afshan Again
+// Change from Asad
+// commit from Afshan
 // comment for pull reqsfgfd
 class AdminModel extends Model
 {

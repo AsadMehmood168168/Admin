@@ -3,11 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-<<<<<<< HEAD
 // Change from Me
-=======
 // commit from Afshan
->>>>>>> 627acf557f5fb3bc3a8feaacc77b4c0d179f62cd
 // comment for pull reqsfgfd
 class AdminModel extends Model
 {

@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 // Change from Me
+// comment for pull reqsfgfd
 class AdminModel extends Model
 {
     private $firstName, $lastName, $email, $password, $phonoNumber;

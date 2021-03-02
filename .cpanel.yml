@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/maxwello/adminmaxwell/
+    - export DEPLOYPATH=/home/maxwello/admin.maxwellopen.com/
     - /bin/cp -R * $DEPLOYPATH

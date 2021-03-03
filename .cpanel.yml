@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/maxwello/public_html/adminpanel/Admin
+    - export DEPLOYPATH=/home/maxwello/admin
     - /bin/cp -R * $DEPLOYPATH

@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 // commit from Afshan Again
-// This is Very First Change to SYCN VS CODE with CPANEL
+// Change After Change Pub to Private
 // commit from Afshan
 // comment for pull reqsfgfd
 class AdminModel extends Model

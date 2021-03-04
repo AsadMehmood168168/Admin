@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 // commit from Afshan Again
-// Change from Asad Mirza to Sync CPANEL REPO
+// This is Very First Change to SYCN VS CODE with CPANEL
 // commit from Afshan
 // comment for pull reqsfgfd
 class AdminModel extends Model

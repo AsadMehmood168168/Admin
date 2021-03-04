@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 // commit from Afshan Again
-// Change After Change Pub to Private
+// Change through HEAD Commit
 // commit from Afshan
 // comment for pull reqsfgfd
 class AdminModel extends Model

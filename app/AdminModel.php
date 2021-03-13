@@ -3,10 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-// commit from Afshan Again
-// Change System Admin First Time
-// commit from Afshan
-// comment for pull reqsfgfd
+// Change in Admin Model First Time
 class AdminModel extends Model
 {
     private $firstName, $lastName, $email, $password, $phonoNumber;

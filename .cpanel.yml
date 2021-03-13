@@ -1,5 +1,6 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/maxwello/public_html/Admin
-    - /bin/cp -R $DEPLOYPATH
+    - export DEPLOYPATH=/home/maxwello/public_html/Admin/public
+    - /bin/cp index.html $DEPLOYPATH
+    - /bin/cp style.css $DEPLOYPATH

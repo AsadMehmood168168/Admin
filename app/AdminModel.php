@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 // commit from Afshan Again
-// Change through HEAD Commit
+// Change System Admin First Time
 // commit from Afshan
 // comment for pull reqsfgfd
 class AdminModel extends Model

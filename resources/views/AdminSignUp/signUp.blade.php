@@ -77,7 +77,7 @@
 @section('content')
 <div class="jumbotron text-center" id="heading">
   <h1>Maxwell Science Publication's</h1>
-  <h3>Admin Panel</h3>
+  <h3>Admin Panel (Production)</h3>
 </div>
 <div class="container" id = "SignUpForm" style="display: none">
   <div class="container">

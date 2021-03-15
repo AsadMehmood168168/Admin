@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 // Change in Admin Model First Time
+// New addition
 class AdminModel extends Model
 {
     private $firstName, $lastName, $email, $password, $phonoNumber;

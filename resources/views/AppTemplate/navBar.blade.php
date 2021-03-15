@@ -13,10 +13,10 @@
         <a href="" class="nav-link">Profile</a>
       </li>
       <li class="nav-item">
-        <a href="/Project1/public/showJournal/show" class="nav-link">Get Journals</a>
+        <a href="/showJournal/show" class="nav-link">Get Journals</a>
       </li>
       <li class="nav-item">
-        <a href="/Project1/public/addJournal/create" class="nav-item nav-link">Add New Journal</a>
+        <a href="/addJournal/create" class="nav-item nav-link">Add New Journal</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

@@ -1,12 +1,12 @@
 <title>Add Journal</title>
 @extends('AppTemplate.homeTemplate')
 @section('content')
-    @include('AppTemplate.navBar')
-    <div class="container main">
-        <div class="bs-example">
-            <h1 class="border-bottom pb-3 mb-4">Add New Journal</h1>
+    <div class="wrapper d-flex align-items-stretch">
+        @include('AppTemplate.sideBar') 
+        <div id="content" class="p-4 p-md-5 pt-5" style="margin-left: 5%">
+            <h1 class="mb-4">Add New Jorunal</h1>
             {!! Form::open(['action' => 'NewJournalController@store','method' => 'POST']) !!}
-                
+
                 {{-- jName --}}
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label" for="jName">Journal Name:</label>
@@ -22,7 +22,7 @@
                         <textarea rows="3" class="form-control" name="indexInfo" placeholder="Journal Index Info" required></textarea>
                     </div>
                 </div>
-                
+
                 {{-- jid  -- jIssn  -- oIssn --}}
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label">Journal ID's</label>
@@ -67,8 +67,26 @@
                         <input type="reset" class="btn btn-secondary" value="Reset">
                     </div>
                 </div>
-                
             {!! Form::close() !!}
         </div>
     </div>
 @endsection
+
+
+
+                
+                
+
+                
+                
+                
+
+                
+
+                
+
+                
+
+                
+                
+            

@@ -11,11 +11,11 @@
 	        <ul class="list-unstyled components mb-5">
 
 	            <li class="active">
-	                <a href="#"><span class="fa fa-home mr-3"></span> Home</a>
+	                <a href="#"><span class="fa fa-home mr-3"></span>Home</a>
 	            </li>
 	                    
                 <li>
-	                <a href="#"><span class="fa fa-user mr-3"></span> About</a>
+	                <a href="/addJournal/create"><span class="fa fa-user mr-3"></span>Add Journal</a>
 	            </li>
 	                    
                 <li>

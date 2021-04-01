@@ -6,13 +6,7 @@
 </style>
 @extends('AppTemplate.homeTemplate')
 @section('content')
-    <div class="wrapper d-flex align-items-stretch">
-      @include('AppTemplate.sideBar') 
-      <div id="content" class="p-4 p-md-5 pt-5" style="margin-left: 5%">
-          <h1 class="mb-4">Admin Profile</h1>
-      </div>
-    </div>
-    
+    <h1 class="mb-4">Admin Profile</h1>
     {{-- <div class="container main">
         <h1>
         Home Page

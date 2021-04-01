@@ -17,7 +17,9 @@ Route::get('/', function () {
     return view('AdminSignUp.signUp');
 });
 
-Route::get('/APITEST', 'TestController@create');
+Route::get('/sideBar', function () {
+    return view('sidebar');
+});
 
 Route::get('/homePage', 'AdminController@homePage');
 

@@ -1,16 +1,18 @@
 <title>Home Page</title>
 <style>
-    .main{
-        margin-top: 75px;
-        width: 100%;
+    #main{
         border: 2px solid black;
     }
 </style>
 @extends('AppTemplate.homeTemplate')
 @section('content')
-    <h2 class="mb-4">Sidebar #05</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <div class="wrapper d-flex align-items-stretch">
+      @include('AppTemplate.sideBar') 
+      <div id="content" class="p-4 p-md-5 pt-5" style="margin-left: 5%">
+          <h1 class="mb-4">Admin Profile</h1>
+      </div>
+    </div>
+    
     {{-- <div class="container main">
         <h1>
         Home Page

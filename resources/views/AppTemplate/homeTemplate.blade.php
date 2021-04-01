@@ -55,14 +55,9 @@
     </style>
   </head>
   <body>
-    <div class="wrapper d-flex align-items-stretch">
-      @include('AppTemplate.sideBar') 
-      <div id="content" class="p-4 p-md-5 pt-5">
-        <section>
-          @yield('content')
-        </section>
-      </div>
-    </div>
+    <section>
+      @yield('content')
+    </section>
     {{-- Scripts --}}
       <script src="js/jquery.min.js"></script>
       <script src="js/popper.js"></script>

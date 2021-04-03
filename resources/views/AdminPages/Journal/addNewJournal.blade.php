@@ -1,8 +1,10 @@
 <title>Add Journal</title>
 @extends('AppTemplate.homeTemplate')
 @section('content')
-    
-            <h1 class="mb-4">Add New Jorunal</h1>
+    @include('AppTemplate.navBar')
+    <div class="container main">
+        <div class="bs-example">
+            <h1 class="border-bottom pb-3 mb-4">Journal's List</h1>
             {!! Form::open(['action' => 'NewJournalController@store','method' => 'POST']) !!}
 
                 {{-- jName --}}
@@ -66,7 +68,8 @@
                     </div>
                 </div>
             {!! Form::close() !!}
-     
+        </div>
+    </div>
 @endsection
 
 

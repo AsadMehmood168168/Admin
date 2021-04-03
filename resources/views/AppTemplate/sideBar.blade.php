@@ -15,11 +15,11 @@
 	            </li>
 	                    
                 <li>
-	                <a href="/addJournal/create"><span class="fa fa-user mr-3"></span>Add Journal</a>
+	                <a href="/Project1/public/addJournal/create"><span class="fa fa-user mr-3"></span>Add Journal</a>
 	            </li>
 	                    
                 <li>
-                    <a href="#"><span class="fa fa-briefcase mr-3"></span> Works</a>
+                    <a href="/Project1/public/addJournal/create"><span class="fa fa-briefcase mr-3"></span>Works</a>
 	            </li>
 	                    
                 <li>

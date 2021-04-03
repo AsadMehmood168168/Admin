@@ -6,8 +6,8 @@
 </style>
 @extends('AppTemplate.homeTemplate')
 @section('content')
-    <h1 class="mb-4">Admin Profile</h1>
-    {{-- <div class="container main">
+    @include('AppTemplate.navBar')
+    <div class="container main">
         <h1>
         Home Page
     </h1>
@@ -21,5 +21,5 @@
 
         Password : {{$admin_Data->password}}
     @endif
-    </div> --}}
+    </div>
 @endsection

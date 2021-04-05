@@ -13,21 +13,33 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/', function () {
+//     return view('AdminSignUp.signUp');
+// });
+
 Route::get('/', function () {
-    return view('AdminSignUp.signUp');
+    return view('AdminSignUp.login');
+});
+
+Route::get('/register', function () {
+    return view('AdminSignUp.register');
 });
 
 Route::get('/sideBar', function () {
     return view('sidebar');
 });
 
-Route::get('/homePage', 'AdminController@homePage');
+Route::get('/addNewJournal', function () {
+    return view('AdminPages.Journal.addNewJournal');
+});
 
 Route::resource('signUp', 'AdminController');
 
+// Route::resource('/signUp', 'AdminController');
+
 Route::post('login', 'AdminController@login');
 
-Route::resource('/addJournal', 'NewJournalController');
+// Route::resource('/addJournal', 'NewJournalController');
 
 Route::resource('addJournal', 'NewJournalController');
 

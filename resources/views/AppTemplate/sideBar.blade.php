@@ -7,15 +7,15 @@
     </div>
 
 	<div class="p-4">
-		<h1><a href="index.html" class="logo">Portfolic <span>Portfolio Agency</span></a></h1>
+		<h1><a href="index.html" class="logo">Maxwell Sci Corp<span>Admin Panel</span></a></h1>
 	        <ul class="list-unstyled components mb-5">
 
-	            <li class="active">
+	            <li>
 	                <a href="#"><span class="fa fa-home mr-3"></span>Home</a>
 	            </li>
 	                    
                 <li>
-	                <a href="/Project1/public/addJournal/create"><span class="fa fa-user mr-3"></span>Add Journal</a>
+	                <a href="/addNewJournal"><span class="fa fa-user mr-3"></span>Add Journal</a>
 	            </li>
 	                    
                 <li>

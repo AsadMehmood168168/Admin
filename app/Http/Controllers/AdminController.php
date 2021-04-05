@@ -10,10 +10,11 @@ class AdminController extends Controller
 {
     public function index()
     {
-        //
+        
     }
     public function create()
     {
+        return view('AdminSignUp.register');
     }
     public function homePage()
     {
